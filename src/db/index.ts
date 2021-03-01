@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize";
 import config from "../config/index";
 
-export default new Sequelize(
+export const sequelize = new Sequelize(
   config.DB.DATABASE,
   config.DB.USER,
   config.DB.PASSWORD,

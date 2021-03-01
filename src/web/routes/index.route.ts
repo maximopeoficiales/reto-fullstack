@@ -1,6 +1,6 @@
-import { Router } from "express";
+import { router } from "./Router";
 import { indexController } from "../controllers/index.controller";
-const router: Router = Router();
+
 router.get("/", indexController.index);
 
 export default router;
