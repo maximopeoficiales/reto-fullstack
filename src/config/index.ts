@@ -1,7 +1,8 @@
 export default {
   DB: {
-    URI: process.env.MONGODB_URI || "mongodb://localhost/leafletdb",
-    USER: process.env.MONGODB_USER,
-    PASSWORD: process.env.MONGODB_PASSWORD,
+    HOST: process.env.MYSQL_HOST || "localhost",
+    USER: process.env.MYSQL_USER || "root",
+    PASSWORD: process.env.MYSQL_PASSWORD || "root",
+    DATABASE: process.env.MYSQL_DATABASE || "dbTest",
   },
 };

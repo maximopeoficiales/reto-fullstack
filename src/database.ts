@@ -1,16 +1,12 @@
-import mongoose, { ConnectionOptions } from "mongoose";
-import config from "./config";
-
+import sequelize from "./db/Init";
 async function startConnection(): Promise<void> {
   try {
-    const dbOptions: ConnectionOptions = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    };
-    await mongoose.connect(config.DB.URI, dbOptions);
+    // con este solo te conectas a la bd
+    // sequelize.authenticate
+    await sequelize.sync({ force: false });
     console.log("DB connected");
   } catch (error) {
-    console.log(error);
+    console.log(`Error en la conexion: ${error}`);
   }
 }
 startConnection();
