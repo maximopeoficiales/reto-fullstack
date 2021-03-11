@@ -4,11 +4,14 @@ import { CategoryRepository } from "../repository/CategoryRepository";
 import { getCustomRepository } from "typeorm";
 
 export class CategoryService implements ICategoryRepository {
+  private getRepository() {
+    return getCustomRepository(CategoryRepository);
+  }
   async findAll(): Promise<Category[]> {
-    return await getCustomRepository(CategoryRepository).find();
+    return await this.getRepository().find();
   }
   async findByName(name: string): Promise<Category> {
-    return await getCustomRepository(CategoryRepository).findByName(name);
+    return await this.getRepository().findByName(name);
   }
 }
 
