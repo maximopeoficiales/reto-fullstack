@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { userUtils } from "../../utilities/UserUtils";
-import { UserModel } from "../../db/models/User.model";
 class IndexController {
   public async index(req: Request, res: Response) {
     // UserModel.create({
@@ -12,7 +11,7 @@ class IndexController {
     // }).then((user: any) => {
     //   res.json(user);
     // });
-    res.json(await UserModel.findAll());
+    // res.json(await UserModel.findAll());
   }
 }
 
