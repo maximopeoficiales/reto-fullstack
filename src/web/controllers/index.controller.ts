@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { userUtils } from "../../utilities/UserUtils";
 class IndexController {
   public async index(req: Request, res: Response) {
     // UserModel.create({
