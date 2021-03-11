@@ -1,5 +1,5 @@
 import { hash, compare } from "bcrypt";
-import { UserModel } from "../db/models/User.model";
+// import { UserModel } from "../db/entitys/User.model";
 
 class UserUtils {
   /**
@@ -14,13 +14,13 @@ class UserUtils {
     }
   }
 
-  public static async checkUser(username: string, password: string) {
-    const currentUser = await UserModel.findOne({ where: { username } });
-    const match = await compare(password, currentUser!.password);
-    if (match) {
-      //login
-    }
-  }
+  // public static async checkUser(username: string, password: string) {
+  //   const currentUser = await UserModel.findOne({ where: { username } });
+  //   const match = await compare(password, currentUser!.password);
+  //   if (match) {
+  //     //login
+  //   }
+  // }
 }
 export const userUtils = new UserUtils();
 // (async () => {
