@@ -7,4 +7,5 @@ export class ClientRepository extends Repository<Client> {
   // async findByName(name: string) {
   //   return await this.findOne({ where: { name } });
   // }
+  
 }

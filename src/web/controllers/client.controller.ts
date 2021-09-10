@@ -1,11 +1,12 @@
+import { log } from "console";
 import { Request, Response } from "express";
+import { getManager } from "typeorm";
 import { clientService } from "../../modules/clients/services/client.service";
 
 class ClientController {
   public async index(req: Request, res: Response) {
     res.json(await clientService.findAll());
   }
-
 
   public async save(req: Request, res: Response) {
     try {
@@ -14,6 +15,14 @@ class ClientController {
     } catch (error) {
       res.status(500).json({ status: 500, error });
     }
+  }
+
+  public async getDataDashboard(req: Request, res: Response) {
+    res.json({
+      averageAge: await clientService.getAverageAge(),
+      clientsRegistereds: await clientService.getClientRegistereds(),
+      clientsAdults: await clientService.getClientsOver(20),
+    });
   }
 }
 
