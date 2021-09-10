@@ -1,6 +1,4 @@
-import { log } from "console";
 import { Request, Response } from "express";
-import { getManager } from "typeorm";
 import { clientService } from "../../modules/clients/services/client.service";
 
 class ClientController {

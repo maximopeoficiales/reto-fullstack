@@ -11,6 +11,7 @@ export class ClientService implements IClientRepository {
   }
 
   async save(client: Client): Promise<Client> {
+
     const savedUser = await this.getRepository().save(client);
     return savedUser;
   }
@@ -28,6 +29,8 @@ export class ClientService implements IClientRepository {
     return parseInt(someQuery ? someQuery[0]["clientRegistereds"] : 0);
   }
   async getNumberClientsOver(age: number): Promise<number> {
+    if (!age) return 0;
+
     const entityManager = getManager();
     const someQuery = await entityManager.query("SELECT COUNT(*) as mayores FROM `clients` as t1 WHERE ROUND(YEAR(now()) - YEAR(t1.date_birthday)) > ?", [age]);
     return parseInt(someQuery ? someQuery[0]["mayores"] : 0)
