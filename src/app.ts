@@ -6,7 +6,7 @@ import morgan from "morgan";
 import indexRoutes from "./web/routes/clients.route";
 //initializations
 const app = express();
-//settings
+//settings 
 app.set("port", process.env.PORT || 3000);
 // cargo los helpers
 app.use(express.static(path.join(__dirname, "public")));
