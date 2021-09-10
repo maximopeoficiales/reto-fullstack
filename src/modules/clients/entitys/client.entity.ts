@@ -5,12 +5,12 @@ export class Client {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: false })
   name: string;
 
-  @Column()
+  @Column({ nullable: false })
   lastname: string;
 
-  @Column({ type: "datetime", name: "date_birthday" })
+  @Column({ type: "date", name: "date_birthday", nullable: false })
   dateBirthday: Date;
 }

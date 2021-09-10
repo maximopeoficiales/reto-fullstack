@@ -1,7 +1,7 @@
 import config from "./config/index";
 // necesario segun la documentacion
 import "reflect-metadata";
-import { createConnection, getConnectionManager } from "typeorm";
+import { getConnectionManager } from "typeorm";
 // conexion con typeorm
 async function startConnection(): Promise<void> {
   try {
