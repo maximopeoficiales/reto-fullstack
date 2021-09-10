@@ -1,4 +1,4 @@
-import { Category } from "../entitys/Category.model";
+import { Category } from "../entitys/category.entity";
 
 export interface ICategoryRepository {
   findAll(): Promise<Category[]>;

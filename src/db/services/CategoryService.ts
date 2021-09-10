@@ -1,5 +1,5 @@
 import { ICategoryRepository } from "../interfaces/ICategoryRepository";
-import { Category } from "../entitys/Category.model";
+import { Category } from "../entitys/category.entity";
 import { CategoryRepository } from "../repository/CategoryRepository";
 import { getCustomRepository } from "typeorm";
 

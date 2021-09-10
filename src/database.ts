@@ -13,7 +13,7 @@ async function startConnection(): Promise<void> {
       username: config.DB.USER,
       password: config.DB.PASSWORD,
       database: config.DB.DATABASE,
-      entities: [__dirname + "/db/entitys/*.ts"],
+      entities: [__dirname + "/**/*.entity{.ts,.js}"],
       synchronize: true,
     });
     await connection.connect();
