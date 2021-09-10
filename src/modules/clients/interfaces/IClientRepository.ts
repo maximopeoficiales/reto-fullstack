@@ -5,6 +5,6 @@ export interface IClientRepository {
   findAll(): Promise<Client[]>;
   save(client: Client): Promise<Client>;
   getAverageAge(): Promise<number>;
-  getClientRegistereds(): Promise<number>
-  getClientsOver(age: number): Promise<number>
+  getNumberClientsRegistereds(): Promise<number>
+  getNumberClientsOver(age: number): Promise<number>
 }

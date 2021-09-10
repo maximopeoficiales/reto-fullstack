@@ -18,10 +18,12 @@ class ClientController {
   }
 
   public async getDataDashboard(req: Request, res: Response) {
+    const letterClients = await clientService.getClientByLetterRamdom();
     res.json({
       averageAge: await clientService.getAverageAge(),
-      clientsRegistereds: await clientService.getClientRegistereds(),
-      clientsAdults: await clientService.getClientsOver(20),
+      clientsRegistereds: await clientService.getNumberClientsRegistereds(),
+      clientsAdults: await clientService.getNumberClientsOver(20),
+      clientsLetters: { ...letterClients }
     });
   }
 }
